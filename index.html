@@ -490,30 +490,32 @@
 
             console.log('Initializing Bloom Observer...');
 
-            const observerOptions = {
-                root: null, // viewport
-                threshold: 0.1 // Trigger when 10% visible
-            };
+            // Create an observer for each modal to handle scrolling correctly
+            const modals = document.querySelectorAll('.modal');
 
-            const bloomObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        console.log('Bloom triggered for:', entry.target);
-                        entry.target.classList.add('bloom-active');
-                        observer.unobserve(entry.target); // Animate once
-                    }
+            modals.forEach(modal => {
+                const images = modal.querySelectorAll('.engagement-image');
+                if (images.length === 0) return;
+
+                const observerOptions = {
+                    root: modal, // Use the modal as the viewport for checking visibility
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            console.log('Bloom triggered in modal:', modal.id, 'for', entry.target);
+                            entry.target.classList.add('bloom-active');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                images.forEach(img => {
+                    img.classList.add('bloom-reveal');
+                    observer.observe(img);
                 });
-            }, observerOptions);
-
-            // Observe all engagement images in modals
-            const modalImages = document.querySelectorAll('.engagement-image');
-            if (modalImages.length === 0) {
-                console.warn('No engagement images found for blooming animation.');
-            }
-
-            modalImages.forEach(imgContainer => {
-                imgContainer.classList.add('bloom-reveal'); // Set initial state
-                bloomObserver.observe(imgContainer);
             });
         });
     </script>
