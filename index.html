@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ditya Decors: Transforming spaces into memories. We specialize in Wedding Decor, Birthday Parties, and bespoke event styling.">
+    <title>Ditya Decors | Transforming Spaces into Memories</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Specific styles for the home page hero */
+        .home-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, var(--bg-deep), transparent);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 12vw, 7rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #fff, var(--accent-gold), #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite, float 6s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .featured-section {
+            padding: 4rem 10%;
+        }
+
+        /* Contact Section Styles */
+        .contact-form {
+            background: var(--glass-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 5px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Ditya Decors</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" style="color: var(--accent-gold);">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="home-hero">
+        <span class="tag" style="font-size: 1rem; margin-bottom: 1rem; letter-spacing: 4px;">EST. 2020</span>
+        <h1 class="hero-title">DESIGNING<br>ETERNAL MOMENTS</h1>
+        <p class="subtitle" style="max-width: 700px;">
+            We craft breathtaking weddings, vibrant parties, and immersive events that leave a lasting impression.
+        </p>
+        <br>
+        <div style="display: flex; gap: 1rem;">
+            <a href="services.html" class="cta-button">Our Portfolio</a>
+            <a href="about.html" class="cta-button" style="border-color: rgba(255,255,255,0.2); color: #fff;">About
+                Us</a>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+        </div>
+    </header>
+
+    <section class="featured-section">
+        <div class="hero">
+            <div class="glass-card floating">
+                <h2 class="celebrate-title">Celebrate<br>in Style</h2>
+                <p>From intimate Haldi ceremonies to grand Reception galas, we bring your vision to life with elegance
+                    and
+                    flair.</p>
+            </div>
+            <div class="grid" style="margin-top: 2rem; text-align: left;">
+
+                <!-- Card 1: Wedding & Engagement (UNIFIED) -->
+                <div class="image-card" onclick="openModal('modal-wedding-engagement')">
+                    <img src="mandap.png" alt="Luxury Weddings & Engagements">
+                    <div class="card-content">
+                        <h3>Weddings & Engagements</h3>
+                        <p>Discover our majestic Wedding Mandaps and ethereal Engagement themes in one place.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Naming Ceremony & Seemantha -->
+                <div class="image-card" onclick="openModal('modal-naming-seemantha')">
+                    <img src="naming_1.jpg" alt="Naming Ceremony & Seemantha">
+                    <div class="card-content">
+                        <h3>Naming Ceremony & Seemantha</h3>
+                        <p>Celebrate your little one's arrival and the joy of motherhood with our vibrant, traditional
+                            setups.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Reception/Bespoke -->
+                <div class="image-card" onclick="openModal('modal-bespoke')">
+                    <img src="reception.png" alt="Elegant Reception Stage">
+                    <div class="card-content">
+                        <h3>Bespoke Decor</h3>
+                        <p>Custom themes, neon accents, and crystal-clear lighting concepts tailored for your grand
+                            night.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Wedding & Engagement Modal (UNIFIED) -->
+    <div id="modal-wedding-engagement" class="modal">
+        <div class="modal-content" style="max-width: 1200px;">
+            <span class="close-modal" onclick="closeModal('modal-wedding-engagement')">&times;</span>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 class="stylish-title">Love in Bloom</h2>
+                <p class="subtitle">From the first promise to the final vow, we craft every moment.</p>
+            </div>
+
+            <div class="modal-scroll-container">
+                <!-- BLOCK 1: ENGAGEMENTS -->
+                <div class="modal-block">
+                    <h3 class="block-title">Engagement Highlights</h3>
+                    <div class="engagement-list">
+                        <!-- Engagement Items -->
+                        <div class="engagement-row">
+                            <div class="engagement-image">
+                                <img src="engagement_1.jpg" alt="Starry Night Theme Decor">
+                            </div>
+                            <div class="engagement-content">
+                                <h3>Celestial Union</h3>
+                                <p>Under a canopy of shimmering stardust, soft light cascades like heavenly rain,
+                                    illuminating the promise of forever with a celestial glow.</p>
+                            </div>
+                        </div>
+                        <div class="engagement-row">
+                            <div class="engagement-image">
+                                <img src="engagement_2.jpg" alt="Lush Floral Stage Decor">
+                            </div>
+                            <div class="engagement-content">
+                                <h3>Floral Symphony</h3>
+                                <p>A breathtaking crescendo of nature's finest blooms, orchestrated to create a garden
+                                    of romance.</p>
+                            </div>
+                        </div>
+                        <div class="engagement-row">
+                            <div class="engagement-image">
+                                <img src="engagement_3.jpg" alt="Gold and Drapery Decor">
+                            </div>
+                            <div class="engagement-content">
+                                <h3>Golden Promise</h3>
+                                <p>Steeped in royal tradition, weaving timeless gold elegance with intricate drapery.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="modal-separator">
+
+            <!-- BLOCK 2: WEDDINGS -->
+            <div class="modal-block">
+                <h3 class="block-title">Wedding Grandeur</h3>
+                <div class="engagement-list">
+                    <!-- Wedding Items (New Images) -->
+                    <div class="engagement-row">
+                        <div class="engagement-image">
+                            <img src="wedding_1.jpg" alt="Royal Mandap">
+                        </div>
+                        <div class="engagement-content">
+                            <h3>Royal Heritage</h3>
+                            <p>A magnificent stage set against marble textures and lush floral garlands, exuding a
+                                sense of timeless aristocracy and grace.</p>
+                        </div>
+                    </div>
+                    <div class="engagement-row">
+                        <div class="engagement-image">
+                            <img src="wedding_2.jpg" alt="Ethereal Aisle">
+                        </div>
+                        <div class="engagement-content">
+                            <h3>Floral Archway</h3>
+                            <p>An expansive floral arch illuminated with warm lights, creating a magical gateway to
+                                your new beginning.</p>
+                        </div>
+                    </div>
+                    <div class="engagement-row">
+                        <div class="engagement-image">
+                            <img src="wedding_3.jpg" alt="Grand Reception">
+                        </div>
+                        <div class="engagement-content">
+                            <h3>Modern Elegance</h3>
+                            <p>A pristine white setting with a stunning floral backdrop, minimalist yet luxurious
+                                seating for an unforgettable reception.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Naming Ceremony & Seemantha Modal (UNIFIED) -->
+    <div id="modal-naming-seemantha" class="modal">
+        <div class="modal-content" style="max-width: 1200px;">
+            <span class="close-modal" onclick="closeModal('modal-naming-seemantha')">&times;</span>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 class="stylish-title">New Beginnings</h2>
+                <p class="subtitle">Cherishing the journey of motherhood and the first steps of life.</p>
+            </div>
+
+            <div class="modal-scroll-container">
+                <!-- BLOCK 1: NAMING CEREMONY -->
+                <div class="modal-block">
+                    <h3 class="block-title">Naming Ceremony</h3>
+                    <div class="engagement-list">
+                        <div class="engagement-row">
+                            <div class="engagement-image">
+                                <img src="naming_1.jpg" alt="Floral Entrance Decor">
+                            </div>
+                            <div class="engagement-content">
+                                <h3>Grand Welcome</h3>
+                                <p>A vibrant floral entrance adorned with yellow and white blooms, creating a joyous
+                                    pathway for the little one.</p>
+                            </div>
+                        </div>
+                        <div class="engagement-row">
+                            <div class="engagement-image">
+                                <img src="naming_2.jpg" alt="Deity Backdrop Decor">
+                            </div>
+                            <div class="engagement-content">
+                                <h3>Divine Blessings</h3>
+                                <p>A spiritual backdrop featuring divine imagery surrounded by lush marigolds, invoking
+                                    blessings for the newborn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="modal-separator">
+
+                <!-- BLOCK 2: SEEMANTHA -->
+                <div class="modal-block">
+                    <h3 class="block-title">Seemantha</h3>
+                    <div class="engagement-list">
+                        <div class="engagement-row">
+                            <div class="engagement-image">
+                                <img src="seemantha_1.jpg" alt="Traditional Seemantha Stage">
+                            </div>
+                            <div class="engagement-content">
+                                <h3>Leafy Canopy</h3>
+                                <p>A traditional green banana leaf backdrop accented with marigolds and jasmine,
+                                    symbolizing prosperity and growth.</p>
+                            </div>
+                        </div>
+                        <div class="engagement-row">
+                            <div class="engagement-image">
+                                <img src="seemantha_2.jpg" alt="Elegant White Floral Stage">
+                            </div>
+                            <div class="engagement-content">
+                                <h3>Modern Grace</h3>
+                                <p>An elegant white and gold setup with a floral arch and soft lighting, creating a
+                                    serene ambiance for the mother-to-be.</p>
+                            </div>
+                        </div>
+                        <div class="engagement-row">
+                            <div class="engagement-image">
+                                <img src="seemantha_3.jpg" alt="Vibrant Marigold Lattice">
+                            </div>
+                            <div class="engagement-content">
+                                <h3>Vibrant Tradition</h3>
+                                <p>A colorful lattice of marigolds in orange and yellow, creating a festive and
+                                    energetic backdrop for the celebration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bespoke Modal -->
+    <div id="modal-bespoke" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-bespoke')">&times;</span>
+            <h2>Bespoke Creations</h2>
+            <p style="margin-bottom: 2rem;">Tailor-made designs for unique souls. Gallery coming soon.</p>
+        </div>
+    </div>
+
+    <section id="contact" style="padding-top: 4rem;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span class="tag">Get in Touch</span>
+            <h2 style="font-size: 3rem;">Let's Plan Your Day</h2>
+            <p class="subtitle">Reach out to us to discuss your upcoming celebration.</p>
+        </div>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="event-type">Event Type</label>
+                <select id="event-type"
+                    style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 5px; color: #fff; font-family: 'Outfit', sans-serif;">
+                    <option value="wedding" style="background: #000;">Wedding / Reception</option>
+                    <option value="haldi" style="background: #000;">Haldi / Mehendi</option>
+                    <option value="birthday" style="background: #000;">Birthday Party</option>
+                    <option value="other" style="background: #000;">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+            <button type="submit" class="cta-button" style="width: 100%;">Send Inquiry</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ditya Decors. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;"><a href="https://www.instagram.com/ditya_decors"
+                target="_blank" style="color: var(--text-muted);">Follow us on Instagram @ditya_decors</a></p>
+    </footer>
+
+    <script>
+        // Disable context menu on images
+        document.addEventListener('contextmenu', function (e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple form handling
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you! We will contact you shortly to discuss your event.');
+            this.reset();
+        });
+
+        // Modal Logic
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex';
+                // Prevent background scrolling
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                // Restore background scrolling
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Flower Blooming Animation Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            // We run the observer logic regardless of device width.
+            // The actual visual effect is controlled by CSS media queries.
+            // This prevents issues where JS and CSS width calculations might slightly differ.
+
+            console.log('Initializing Bloom Observer...');
+
+            const observerOptions = {
+                root: null, // viewport
+                threshold: 0.1 // Trigger when 10% visible
+            };
+
+            const bloomObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log('Bloom triggered for:', entry.target);
+                        entry.target.classList.add('bloom-active');
+                        observer.unobserve(entry.target); // Animate once
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all engagement images in modals
+            const modalImages = document.querySelectorAll('.engagement-image');
+            if (modalImages.length === 0) {
+                console.warn('No engagement images found for blooming animation.');
+            }
+
+            modalImages.forEach(imgContainer => {
+                imgContainer.classList.add('bloom-reveal'); // Set initial state
+                bloomObserver.observe(imgContainer);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
