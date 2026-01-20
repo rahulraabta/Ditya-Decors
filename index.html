@@ -515,6 +515,44 @@
                 images.forEach(img => {
                     img.classList.add('bloom-reveal');
                     observer.observe(img);
+
+                    // --- Hold-to-Zoom Logic ---
+                    // Re-enable pointer events for the container to detect touch/click
+                    // The img itself has pointer-events: none (CSS protection), so we listen on the container (.engagement-image)
+                    const container = img.parentElement;
+                    if (container.classList.contains('engagement-image')) {
+
+                        const startZoom = (e) => {
+                            // Only zoom if it's the image being interacted with
+                            const src = img.getAttribute('src');
+                            if (!src) return;
+
+                            e.preventDefault(); // Prevent scroll/context menu
+
+                            // Create Overlay
+                            const overlay = document.createElement('div');
+                            overlay.className = 'zoom-overlay';
+                            overlay.innerHTML = `<img src="${src}" alt="Zoomed Image">`;
+                            document.body.appendChild(overlay);
+
+                            // Function to remove overlay
+                            const endZoom = () => {
+                                overlay.style.opacity = '0';
+                                setTimeout(() => {
+                                    if (document.body.contains(overlay)) {
+                                        document.body.removeChild(overlay);
+                                    }
+                                }, 200);
+                            };
+
+                            // Listen for release events on window to catch drag-offs
+                            window.addEventListener('touchend', endZoom, { once: true });
+                            window.addEventListener('mouseup', endZoom, { once: true });
+                        };
+
+                        container.addEventListener('touchstart', startZoom);
+                        container.addEventListener('mousedown', startZoom);
+                    }
                 });
             });
         });

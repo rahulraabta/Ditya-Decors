@@ -726,3 +726,36 @@ footer {
         transform: scale(1);
     }
 }
+
+/* Hold-to-Zoom Overlay */
+.zoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    cursor: zoom-out;
+    opacity: 0;
+    animation: fadeIn 0.2s forwards;
+}
+
+.zoom-overlay img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    transform: scale(0.9);
+    animation: zoomInImage 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes zoomInImage {
+    to {
+        transform: scale(1);
+    }
+}
