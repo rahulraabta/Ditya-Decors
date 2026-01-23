@@ -16,6 +16,7 @@
         /* Specific styles for the home page hero */
         .home-hero {
             height: 100vh;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -25,8 +26,19 @@
             overflow: hidden;
             background-image: url('hero_background.png');
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
+            background-attachment: scroll;
+        }
+
+        /* Mobile-specific background fixes */
+        @media (max-width: 768px) {
+            .home-hero {
+                background-size: cover;
+                background-position: center center;
+                min-height: 100vh;
+                min-height: -webkit-fill-available;
+            }
         }
 
         .home-hero::before {
@@ -171,7 +183,6 @@
     </nav>
 
     <header class="home-hero">
-        <span class="tag" style="font-size: 1rem; margin-bottom: 1rem; letter-spacing: 4px;">EST. 2020</span>
         <h1 class="hero-title">DESIGNING<br>ETERNAL MOMENTS</h1>
         <p class="subtitle" style="max-width: 700px;">
             We craft breathtaking weddings, vibrant parties, and immersive events that leave a lasting impression.
