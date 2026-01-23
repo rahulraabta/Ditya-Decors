@@ -344,11 +344,16 @@
         @media (max-width: 768px) {
             .brand-showcase {
                 flex-direction: column;
-                gap: 0.8rem;
-                padding: 1.2rem 1rem;
-                margin: 1rem 0;
-                width: 95%;
+                gap: 0.6rem;
+                padding: 1rem 0.5rem;
+                margin: -1rem 0 1rem 0;
+                width: 100%;
                 max-width: 100%;
+                /* Remove box shape on mobile */
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
             }
 
             .brand-decoration {
@@ -363,7 +368,7 @@
             }
 
             .drape-line {
-                width: 40px;
+                width: 50px;
                 height: 2px;
             }
 
@@ -372,37 +377,39 @@
                 flex-wrap: nowrap;
                 justify-content: center;
                 align-items: flex-end;
+                letter-spacing: 2px;
             }
 
             .brand-letter {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
 
             .candle-svg {
-                width: 20px;
-                height: 50px;
-                margin-bottom: -4px;
+                width: 22px;
+                height: 55px;
+                margin-bottom: -5px;
             }
 
             .brand-spacer {
-                width: 0.4rem;
+                width: 0.5rem;
             }
 
             .brand-tagline {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
                 padding: 0 0.5rem;
+                letter-spacing: 1px;
             }
         }
 
         /* Extra small screens */
         @media (max-width: 400px) {
             .brand-letter {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .candle-svg {
-                width: 16px;
-                height: 42px;
+                width: 18px;
+                height: 48px;
             }
 
             .brand-decoration {
@@ -410,11 +417,12 @@
             }
 
             .brand-showcase {
-                padding: 1rem 0.5rem;
+                padding: 0.8rem 0.3rem;
+                margin-top: -1.5rem;
             }
 
             .brand-tagline {
-                font-size: 0.75rem;
+                font-size: 0.8rem;
             }
         }
     </style>
