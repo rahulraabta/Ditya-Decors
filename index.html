@@ -162,6 +162,261 @@
             outline: none;
             border-color: var(--accent-gold);
         }
+
+        /* Brand Showcase Styles */
+        .brand-showcase {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            padding: 2rem 3rem;
+            background: linear-gradient(135deg, rgba(26, 11, 46, 0.85) 0%, rgba(45, 20, 75, 0.7) 50%, rgba(26, 11, 46, 0.85) 100%);
+            border-radius: 22px;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.45), inset 0 0 70px rgba(212, 175, 55, 0.06);
+        }
+
+        .brand-decoration {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand-decoration.left {
+            flex-direction: row;
+        }
+
+        .brand-decoration.right {
+            flex-direction: row;
+        }
+
+        .marigold-flower {
+            width: 55px;
+            height: 38px;
+            animation: flowerGlow 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.65));
+        }
+
+        @keyframes flowerGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.9));
+            }
+        }
+
+        .drape-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, #FFD700, #D4AF37, transparent);
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .drape-line::before,
+        .drape-line::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #FFD700;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .drape-line::before {
+            left: 0;
+        }
+
+        .drape-line::after {
+            right: 0;
+        }
+
+        .brand-name {
+            display: flex;
+            align-items: flex-end;
+            gap: 0;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .brand-letter {
+            font-size: 4.5rem;
+            color: #FFD700;
+            text-shadow: 0 0 25px rgba(212, 175, 55, 0.55), 0 2px 5px rgba(0, 0, 0, 0.35);
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+            line-height: 1;
+        }
+
+        .brand-letter:hover {
+            transform: translateY(-3px);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .brand-spacer {
+            width: 1.2rem;
+        }
+
+        .decors-d {
+            color: #FFA500;
+        }
+
+        .candle-letter {
+            display: inline-flex;
+            align-items: flex-end;
+            margin: 0 -5px;
+        }
+
+        .candle-svg {
+            width: 38px;
+            height: 90px;
+            margin-bottom: -6px;
+        }
+
+        .flame {
+            animation: flameFlicker 0.8s ease-in-out infinite alternate;
+            transform-origin: center bottom;
+        }
+
+        .flame-inner {
+            animation: flameFlickerInner 0.6s ease-in-out infinite alternate;
+            transform-origin: center bottom;
+        }
+
+        @keyframes flameFlicker {
+            0% {
+                transform: scaleY(1) scaleX(1);
+                opacity: 1;
+            }
+
+            25% {
+                transform: scaleY(1.1) scaleX(0.95);
+                opacity: 0.95;
+            }
+
+            50% {
+                transform: scaleY(0.95) scaleX(1.05);
+                opacity: 1;
+            }
+
+            75% {
+                transform: scaleY(1.05) scaleX(0.98);
+                opacity: 0.97;
+            }
+
+            100% {
+                transform: scaleY(1.02) scaleX(1.02);
+                opacity: 1;
+            }
+        }
+
+        @keyframes flameFlickerInner {
+            0% {
+                transform: scaleY(1);
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: scaleY(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scaleY(0.95);
+                opacity: 0.85;
+            }
+        }
+
+        .brand-tagline {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        /* Mobile responsive for brand showcase */
+        @media (max-width: 768px) {
+            .brand-showcase {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1.2rem 1rem;
+                margin: 1rem 0;
+                width: 95%;
+                max-width: 100%;
+            }
+
+            .brand-decoration {
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+
+            .marigold-flower {
+                width: 35px;
+                height: 25px;
+            }
+
+            .drape-line {
+                width: 40px;
+                height: 2px;
+            }
+
+            .brand-name {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: flex-end;
+            }
+
+            .brand-letter {
+                font-size: 2.2rem;
+            }
+
+            .candle-svg {
+                width: 20px;
+                height: 50px;
+                margin-bottom: -4px;
+            }
+
+            .brand-spacer {
+                width: 0.4rem;
+            }
+
+            .brand-tagline {
+                font-size: 0.85rem;
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 400px) {
+            .brand-letter {
+                font-size: 1.8rem;
+            }
+
+            .candle-svg {
+                width: 16px;
+                height: 42px;
+            }
+
+            .brand-decoration {
+                display: none;
+            }
+
+            .brand-showcase {
+                padding: 1rem 0.5rem;
+            }
+
+            .brand-tagline {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 
@@ -184,10 +439,83 @@
 
     <header class="home-hero">
         <h1 class="hero-title">DESIGNING<br>ETERNAL MOMENTS</h1>
-        <p class="subtitle" style="max-width: 700px;">
-            We craft breathtaking weddings, vibrant parties, and immersive events that leave a lasting impression.
-        </p>
-        <br>
+
+        <!-- Stylized Ditya Decors Brand Element -->
+        <div class="brand-showcase">
+            <div class="brand-decoration left">
+                <svg viewBox="0 0 60 40" class="marigold-flower">
+                    <circle cx="30" cy="20" r="8" fill="#FFD700" />
+                    <ellipse cx="30" cy="8" rx="4" ry="6" fill="#FFA500" />
+                    <ellipse cx="30" cy="32" rx="4" ry="6" fill="#FFA500" />
+                    <ellipse cx="18" cy="20" rx="6" ry="4" fill="#FFA500" />
+                    <ellipse cx="42" cy="20" rx="6" ry="4" fill="#FFA500" />
+                    <ellipse cx="21" cy="11" rx="4" ry="5" fill="#FFB347" transform="rotate(-45 21 11)" />
+                    <ellipse cx="39" cy="11" rx="4" ry="5" fill="#FFB347" transform="rotate(45 39 11)" />
+                    <ellipse cx="21" cy="29" rx="4" ry="5" fill="#FFB347" transform="rotate(45 21 29)" />
+                    <ellipse cx="39" cy="29" rx="4" ry="5" fill="#FFB347" transform="rotate(-45 39 29)" />
+                </svg>
+                <div class="drape-line"></div>
+            </div>
+
+            <div class="brand-name">
+                <span class="brand-letter">D</span>
+                <span class="candle-letter">
+                    <svg viewBox="0 0 24 60" class="candle-svg">
+                        <!-- Candle body -->
+                        <rect x="6" y="25" width="12" height="32" rx="2" fill="url(#candleGradient)" />
+                        <!-- Candle wick -->
+                        <line x1="12" y1="20" x2="12" y2="25" stroke="#333" stroke-width="1.5" />
+                        <!-- Flame -->
+                        <ellipse cx="12" cy="14" rx="5" ry="8" fill="url(#flameGradient)" class="flame" />
+                        <ellipse cx="12" cy="15" rx="2" ry="4" fill="#FFF5E0" class="flame-inner" />
+                        <!-- Wax drips -->
+                        <circle cx="8" cy="35" r="1.5" fill="#F5E6D3" />
+                        <circle cx="15" cy="42" r="1" fill="#F5E6D3" />
+                        <defs>
+                            <linearGradient id="candleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#F5E6D3" />
+                                <stop offset="50%" style="stop-color:#FFFEF0" />
+                                <stop offset="100%" style="stop-color:#F0DCC0" />
+                            </linearGradient>
+                            <radialGradient id="flameGradient" cx="50%" cy="70%" r="60%">
+                                <stop offset="0%" style="stop-color:#FFFFFF" />
+                                <stop offset="30%" style="stop-color:#FFE066" />
+                                <stop offset="70%" style="stop-color:#FF9500" />
+                                <stop offset="100%" style="stop-color:#FF4500" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </span>
+                <span class="brand-letter">T</span>
+                <span class="brand-letter">Y</span>
+                <span class="brand-letter">A</span>
+                <span class="brand-spacer"></span>
+                <span class="brand-letter decors-d">D</span>
+                <span class="brand-letter">E</span>
+                <span class="brand-letter">C</span>
+                <span class="brand-letter">O</span>
+                <span class="brand-letter">R</span>
+                <span class="brand-letter">S</span>
+            </div>
+
+            <div class="brand-decoration right">
+                <div class="drape-line"></div>
+                <svg viewBox="0 0 60 40" class="marigold-flower">
+                    <circle cx="30" cy="20" r="8" fill="#FFD700" />
+                    <ellipse cx="30" cy="8" rx="4" ry="6" fill="#FFA500" />
+                    <ellipse cx="30" cy="32" rx="4" ry="6" fill="#FFA500" />
+                    <ellipse cx="18" cy="20" rx="6" ry="4" fill="#FFA500" />
+                    <ellipse cx="42" cy="20" rx="6" ry="4" fill="#FFA500" />
+                    <ellipse cx="21" cy="11" rx="4" ry="5" fill="#FFB347" transform="rotate(-45 21 11)" />
+                    <ellipse cx="39" cy="11" rx="4" ry="5" fill="#FFB347" transform="rotate(45 39 11)" />
+                    <ellipse cx="21" cy="29" rx="4" ry="5" fill="#FFB347" transform="rotate(45 21 29)" />
+                    <ellipse cx="39" cy="29" rx="4" ry="5" fill="#FFB347" transform="rotate(-45 39 29)" />
+                </svg>
+            </div>
+        </div>
+
+        <p class="brand-tagline">Where Every Detail Tells Your Story</p>
+
         <div style="display: flex; gap: 1rem;">
             <a href="#portfolio" class="cta-button">Our Portfolio</a>
             <a href="about.html" class="cta-button" style="border-color: rgba(255,255,255,0.2); color: #fff;">About
