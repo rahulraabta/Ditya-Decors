@@ -346,7 +346,7 @@
                 flex-direction: column;
                 gap: 0.6rem;
                 padding: 1rem 0.5rem;
-                margin: -1rem 0 1rem 0;
+                margin: -3rem 0 1rem 0;
                 width: 100%;
                 max-width: 100%;
                 /* Remove box shape on mobile */
@@ -825,6 +825,26 @@
             e.preventDefault();
             alert('Thank you! We will contact you shortly to discuss your event.');
             this.reset();
+        });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
         });
 
         // Modal Logic
