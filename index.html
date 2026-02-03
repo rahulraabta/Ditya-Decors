@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="index.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Great+Vibes&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet">
     <style>
         /* Specific styles for the home page hero */
@@ -242,7 +243,8 @@
             display: flex;
             align-items: flex-end;
             gap: 0;
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
 
         .brand-letter {
@@ -601,16 +603,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4: Reception/Bespoke -->
-                <div class="image-card" onclick="openModal('modal-bespoke')">
-                    <img src="reception.png" alt="Elegant Reception Stage">
-                    <div class="card-content">
-                        <h3>Bespoke Decor</h3>
-                        <p>Custom themes, neon accents, and crystal-clear lighting concepts tailored for your grand
-                            night.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -787,15 +779,6 @@
         </div>
     </div>
 
-    <!-- Bespoke Modal -->
-    <div id="modal-bespoke" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('modal-bespoke')">&times;</span>
-            <h2>Bespoke Creations</h2>
-            <p style="margin-bottom: 2rem;">Tailor-made designs for unique souls. Gallery coming soon.</p>
-        </div>
-    </div>
-
     <!-- Cinematic Video Showcase Section -->
     <section id="video-gallery" class="cinematic-showcase">
         <!-- Floating Decorative Elements -->
@@ -830,37 +813,6 @@
             </div>
         </div>
 
-        <!-- Featured Hero Video -->
-        <div class="hero-video-container" onclick="openVideoModal('video1')">
-            <div class="hero-video-glow"></div>
-            <div class="hero-video-frame">
-                <img src="mandap.png" alt="Featured Wedding Decor">
-                <div class="hero-video-overlay">
-                    <div class="hero-play-btn">
-                        <div class="play-ripple"></div>
-                        <div class="play-ripple delay-1"></div>
-                        <div class="play-ripple delay-2"></div>
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z" />
-                        </svg>
-                    </div>
-                    <div class="hero-video-info">
-                        <span class="hero-badge">★ Most Popular</span>
-                        <h3>Royal Wedding Mandap</h3>
-                        <p>A breathtaking walkthrough of our signature grand mandap • 2:45</p>
-                        <span class="watch-now-btn">
-                            <span class="btn-text">Watch Now</span>
-                            <span class="btn-arrow">→</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="corner-accent top-left"></div>
-                <div class="corner-accent top-right"></div>
-                <div class="corner-accent bottom-left"></div>
-                <div class="corner-accent bottom-right"></div>
-            </div>
-            <div class="hero-label">Featured</div>
-        </div>
 
         <!-- Video Gallery Grid -->
         <div class="video-showcase-grid">
@@ -868,7 +820,7 @@
             <div class="showcase-card" onclick="openVideoModal('video2')">
                 <div class="card-glow"></div>
                 <div class="card-frame">
-                    <img src="reception.png" alt="Reception Decor">
+                    <img src="event_3.png" alt="Celebration Event">
                     <div class="card-overlay">
                         <div class="mini-play-btn">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -880,8 +832,8 @@
                     <div class="card-shine"></div>
                 </div>
                 <div class="card-details">
-                    <h4>Grand Reception Stage</h4>
-                    <p>Crystal lighting elegance</p>
+                    <h4>Celebration Event</h4>
+                    <p>Elegant decor magic</p>
                     <div class="card-meta">
                         <span class="duration">3:12</span>
                         <span class="views">2.4K views</span>
@@ -889,24 +841,24 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
+            <!-- Card 3 - Birthday Party -->
             <div class="showcase-card" onclick="openVideoModal('video3')">
                 <div class="card-glow"></div>
                 <div class="card-frame">
-                    <img src="naming_1.jpg" alt="Naming Ceremony">
+                    <img src="birthday_theme.png" alt="Birthday Party Decor">
                     <div class="card-overlay">
                         <div class="mini-play-btn">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
-                        <div class="card-badge new">✨ New</div>
+                        <div class="card-badge new">🎂 Party</div>
                     </div>
                     <div class="card-shine"></div>
                 </div>
                 <div class="card-details">
-                    <h4>Naming Ceremony Dreams</h4>
-                    <p>Vibrant floral magic</p>
+                    <h4>Birthday Celebration</h4>
+                    <p>Colorful party magic</p>
                     <div class="card-meta">
                         <span class="duration">1:58</span>
                         <span class="views">1.8K views</span>
@@ -914,24 +866,24 @@
                 </div>
             </div>
 
-            <!-- Card 4 -->
+            <!-- Card 4 - Naming Ceremony -->
             <div class="showcase-card" onclick="openVideoModal('video4')">
                 <div class="card-glow"></div>
                 <div class="card-frame">
-                    <img src="engagement_1.jpg" alt="Engagement Decor">
+                    <img src="naming_ceremony_theme.png" alt="Naming Ceremony Decor">
                     <div class="card-overlay">
                         <div class="mini-play-btn">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
-                        <div class="card-badge love">💕 Romantic</div>
+                        <div class="card-badge love">👶 Traditional</div>
                     </div>
                     <div class="card-shine"></div>
                 </div>
                 <div class="card-details">
-                    <h4>Celestial Engagement</h4>
-                    <p>Starry night enchantment</p>
+                    <h4>Naming Ceremony</h4>
+                    <p>Sacred celebration</p>
                     <div class="card-meta">
                         <span class="duration">2:20</span>
                         <span class="views">3.1K views</span>
@@ -1004,6 +956,8 @@
                     style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 5px; color: #fff; font-family: 'Outfit', sans-serif;">
                     <option value="wedding" style="background: #000;">Wedding / Reception</option>
                     <option value="haldi" style="background: #000;">Haldi / Mehendi</option>
+                    <option value="naming" style="background: #000;">Naming Ceremony</option>
+                    <option value="seemantha" style="background: #000;">Seemantha</option>
                     <option value="birthday" style="background: #000;">Birthday Party</option>
                     <option value="other" style="background: #000;">Other</option>
                 </select>
@@ -1096,6 +1050,75 @@
             'video5': '', // Add more videos when available
             'video6': ''  // Add more videos when available
         };
+
+        // Hero Video Inline Playback - plays for 10 seconds on the surface
+        let heroVideoTimeout = null;
+        let isHeroVideoPlaying = false;
+
+        function playHeroVideoInline(event) {
+            event.stopPropagation();
+
+            const video = document.getElementById('hero-inline-video');
+            const thumbnail = document.getElementById('hero-thumbnail');
+            const overlay = document.getElementById('hero-overlay');
+
+            if (!video || isHeroVideoPlaying) return;
+
+            // Show video, hide thumbnail and overlay
+            isHeroVideoPlaying = true;
+            thumbnail.style.opacity = '0';
+            thumbnail.style.visibility = 'hidden';
+            overlay.style.opacity = '0';
+            overlay.style.visibility = 'hidden';
+            video.style.display = 'block';
+            video.style.opacity = '1';
+
+            // Start from beginning and play
+            video.currentTime = 0;
+            video.play().catch(e => console.log('Video play error:', e));
+
+            // Stop after 10 seconds
+            heroVideoTimeout = setTimeout(() => {
+                stopHeroVideo();
+            }, 10000);
+
+            // Also stop if video ends naturally before 10 seconds
+            video.onended = () => {
+                stopHeroVideo();
+            };
+        }
+
+        function stopHeroVideo() {
+            const video = document.getElementById('hero-inline-video');
+            const thumbnail = document.getElementById('hero-thumbnail');
+            const overlay = document.getElementById('hero-overlay');
+
+            if (heroVideoTimeout) {
+                clearTimeout(heroVideoTimeout);
+                heroVideoTimeout = null;
+            }
+
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+                video.style.opacity = '0';
+                setTimeout(() => {
+                    video.style.display = 'none';
+                }, 300);
+            }
+
+            // Show thumbnail and overlay again
+            if (thumbnail) {
+                thumbnail.style.visibility = 'visible';
+                thumbnail.style.opacity = '1';
+            }
+            if (overlay) {
+                overlay.style.visibility = 'visible';
+                overlay.style.opacity = '1';
+            }
+
+            isHeroVideoPlaying = false;
+        }
 
         function openVideoModal(videoId) {
             const modal = document.getElementById('video-modal');
