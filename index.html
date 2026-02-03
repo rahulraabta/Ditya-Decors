@@ -50,9 +50,9 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg,
-                    rgba(5, 5, 16, 0.75) 0%,
-                    rgba(26, 11, 46, 0.65) 50%,
-                    rgba(5, 5, 16, 0.8) 100%);
+                    rgba(5, 5, 16, 0.85) 0%,
+                    rgba(10, 10, 25, 0.7) 50%,
+                    rgba(5, 5, 16, 0.85) 100%);
             z-index: 0;
             pointer-events: none;
         }
@@ -994,10 +994,19 @@
             });
         });
 
-        // Simple form handling
+        // Form handling - Send to WhatsApp
         document.querySelector('.contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Thank you! We will contact you shortly to discuss your event.');
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const eventType = document.getElementById('event-type').options[document.getElementById('event-type').selectedIndex].text;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `Hello Ditya Decors!%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Event Type:* ${eventType}%0A*Message:* ${message}`;
+            const whatsappUrl = `https://wa.me/919741846164?text=${whatsappMessage}`;
+
+            window.open(whatsappUrl, '_blank');
             this.reset();
         });
 
@@ -1045,7 +1054,7 @@
         const videoSources = {
             'video1': 'WhatsApp Video 2026-01-23 at 6.50.11 PM.mp4',
             'video2': 'WhatsApp Video 2026-01-23 at 6.50.49 PM.mp4',
-            'video3': 'WhatsApp Video 2026-01-23 at 7.00.48 PM (1).mp4',
+            'video3': 'WhatsApp Video 2026-01-23 at 6.57.51 PM.mp4',
             'video4': 'WhatsApp Video 2026-01-23 at 7.01.30 PM.mp4',
             'video5': '', // Add more videos when available
             'video6': ''  // Add more videos when available
